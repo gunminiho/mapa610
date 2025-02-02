@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Mapa Interactivo con GeoJSON</title>
+
+        <!-- Cargar la hoja de estilos de Leaflet -->
+        <link rel="stylesheet"
+            href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+
+        <!-- Cargar los estilos personalizados -->
+        <link rel="stylesheet" href="css/styles.css" />
+    </head>
+    <body>
+
+        <!-- Contenedor del mapa -->
+        <div id="map"></div>
+
+        <!-- Contenedor de la leyenda de la cámara clickeada -->
+        <div id="cameraInfoPopup" class="camera-info-popup">
+            <h3>Información de la Cámara</h3>
+            <p id="cameraName">Nombre de la cámara: <span
+                    id="cameraNameValue"></span></p>
+            <p id="cameraLat">Latitud: <span id="cameraLatValue"></span></p>
+            <p id="cameraLng">Longitud: <span id="cameraLngValue"></span></p>
+            <p id="cameraDireccion">Dirección: <span
+                    id="cameraDireccionValue"></span></p>
+            <p id="cameraTipo">Tipo: <span id="cameraTipoValue"></span></p>
+            <p id="cameraCamara">Cámara: <span
+                    id="cameraCamaraValue"></span></p>
+            <p id="cameraMegafono">Megáfono: <span
+                    id="cameraMegafonoValue"></span></p>
+            <p id="cameraBoton">Btn Panico: <span
+                    id="cameraBotonValue"></span></p>
+            <p id="cameraJurisdiccion">Jurisdicción: <span
+                    id="cameraJurisdiccionValue"></span></p>
+        </div>
+
+        <!-- Campo de búsqueda -->
+        <div id="cameraSearch">
+           <!-- Campo de búsqueda por número de cámara -->
+<label for="cameraSearchInput">Buscar cámara:</label>
+<input type="text" id="cameraSearchInput" placeholder="Escribe el número de cámara..." />
+
+<!-- Selector para cámaras (ya existente) -->
+<label for="cameraSelect">Selecciona una cámara:</label>
+<select id="cameraSelect">
+    <option value="">Selecciona una cámara</option>
+    <!-- Las opciones se agregarán dinámicamente con JavaScript -->
+</select>
+
+<!-- Selector para filtrar por tipo de cámara -->
+<label for="cameraTypeSelect">Filtrar por tipo de cámara:</label>
+<select id="cameraTypeSelect">
+    <option value="">Todos los tipos</option>
+    <option value="TIPO I">Tipo I (360)</option>
+    <option value="TIPO II">Tipo II (180)</option>
+    <option value="TIPO III">Tipo III (LPR)</option>
+</select>
+
+<!-- Nuevo filtro para botón de pánico -->
+<label for="hasBoton">Con botón de pánico:</label>
+<input type="checkbox" id="hasBoton" name="hasBoton" />
+
+<!-- Nuevo filtro para megáfono -->
+<label for="hasMegafono">Con megáfono:</label>
+<input type="checkbox" id="hasMegafono" name="hasMegafono" />
+
+            </select>
+
+        </div>
+
+        <!-- Cargar la biblioteca de Leaflet -->
+        <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+
+        <!-- Para leer archivos CSV -->
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+
+        <script
+            src="https://cdn.jsdelivr.net/npm/@turf/turf@6.5.0/turf.min.js"></script>
+
+        <!-- Cargar la lógica para el mapa -->
+        <script src="js/data.js"></script> <!-- Lógica para jurisdicciones -->
+        <script src="js/geojson.js"></script>
+        <!-- Lógica para manejar el GeoJSON -->
+        <script src="js/map.js"></script> <!-- Lógica para el mapa -->
+        <script src="js/select.js"></script> <!-- Lógica para el select -->
+
+    </body>
+</html>

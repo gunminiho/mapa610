@@ -1,0 +1,185 @@
+#map {
+    width: 100%;
+    height: 100vh;
+}
+
+#html, body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    height: 100vh;
+    width: 100%;
+}
+
+/* Estilo personalizado para el tooltip */
+.camera-tooltip {
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    font-size: 10px;
+    padding: 5px;
+    border-radius: 3px;
+}
+
+#filter-container {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 1000;
+    background-color: white;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+#jurisdictions {
+    width: 200px;
+    padding: 5px;
+}
+
+
+/* Estilo para el popup fijo en la esquina derecha */
+.camera-info-popup {
+    position: fixed;
+    top: 1%;
+    right: 1%;
+    width: fit-content;
+    height: 200px;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.75);
+    color: rgb(0, 0, 0);
+    padding: 10px;
+    border-radius: 5%;
+    display: none;  /* Iniciar oculto */
+    z-index: 9999;  /* Asegurarse de que esté sobre otros elementos */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+
+}
+
+.camera-info-popup h3 {
+    font-size: 18px;
+    padding: 0px;
+    margin: 0;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.camera-info-popup p {
+    margin: 0px 0;
+}
+
+.camera-info-popup span {
+    font-weight: bold;
+}
+
+/* Estilo general para el contenedor de la búsqueda de cámaras */
+#cameraSearch {
+    position: fixed;
+    bottom: 1%;
+    left: 5px;
+    z-index: 1000;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 8px; /* Reducir el padding para ahorrar más espacio */
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    display: flex;
+    gap: 8px; /* Reducir el espacio entre los elementos */
+    align-items: baseline;
+    flex-wrap: wrap; /* Permite que los elementos se acomoden en varias líneas si es necesario */
+    
+}
+
+/* Estilo para los checkboxes */
+#cameraSearch input[type="checkbox"] {
+    width: fit-content;   /* El ancho se ajusta al contenido */
+    /*margin: 0;            /* Elimina márgenes adicionales */
+    /*padding: 0;           /* Elimina padding extra */
+   /*display: inline-block;/* Asegura que el checkbox se ajuste al contenido */
+    /*vertical-align: middle; /* Alineación vertical para que se vean bien */
+}
+
+/* Estilo para los labels de los checkboxes */
+#cameraSearch label[for="hasBoton"], 
+#cameraSearch label[for="hasMegafono"] {
+    font-size: 12px;
+    color: #333;
+    font-weight: 600;
+    /*margin: 0 5px 0 0; /* Reducir el margen entre los checkbox */
+    display: inline-block; /* Mantener los labels junto a los checkboxes */
+    /*white-space: nowrap; /* Asegura que el texto no se divida */
+}
+
+
+
+/* Estilo para la etiqueta del select */
+#cameraSearch label {
+    font-size: 12px;
+    color: #333;
+    font-weight: 600;
+    margin-bottom: 5px; /* Reducir el margen para que se aproxime más al siguiente campo */
+    display: block;     /* Esto asegura que cada label esté en su propia línea */
+    white-space: normal; /* Permite que el texto se divida en varias líneas */
+    word-wrap: break-word; /* Si el texto es muy largo, lo parte en palabras */
+    max-width: 120px;    /* Ajusta el tamaño según tu diseño */
+}
+
+
+/* Estilo para el select */
+#cameraSelect {
+    font-size: 12px;
+    padding: 8px; /* Reducir el padding para ahorrar espacio */
+    width: 80px;   /* Permite que el select se ajuste al contenido */
+    /*min-width: 120px;  /* Establece un tamaño mínimo para que no sea demasiado pequeño */
+    background-color: #fff;
+    border: 2px solid #007BFF;
+    border-radius: 8px;
+    box-sizing: border-box;
+    outline: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+/* Estilo para el input de búsqueda */
+#cameraSearch input {
+    font-size: 10px;
+    padding: 8px;
+    width: 100px; /* Controla el ancho del input */
+    background-color: #fff;
+    border: 2px solid #007BFF;
+    border-radius: 8px;
+    box-sizing: border-box;
+    outline: none;
+}
+
+
+
+/* Efecto al poner el mouse sobre el select */
+#cameraSelect:hover {
+    border-color: #0056b3;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Estilo cuando el select está enfocado */
+#cameraSelect:focus {
+    border-color: #0056b3;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Estilo de las opciones dentro del select */
+#cameraSelect option {
+    font-size: 14px;
+    padding: 10px;
+    background-color: #fff;
+    color: #333;
+}
+
+/* Estilo de las opciones seleccionadas */
+#cameraSelect option:checked {
+    background-color: #007BFF;
+    color: #fff;
+}
+
+/* Efecto en las opciones al hacer hover */
+#cameraSelect option:hover {
+    background-color: #f0f0f0;
+}
+
