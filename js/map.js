@@ -186,6 +186,7 @@ function resetFilter() {
     }
 
     loadMarkers(geojsonData);
+    clearSearchMarkers();  // Borrar los marcadores de búsqueda
     document.getElementById('cameraInfoPopup').style.display = 'none';
 }
 
